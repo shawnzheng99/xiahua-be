@@ -22,6 +22,7 @@ groupRoute.get('/create', async(req, res) => {
     res.render('createGroup')
 });
 
+
 groupRoute.post('/create', async (req, res) => {
     try {
         const {
