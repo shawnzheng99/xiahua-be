@@ -2,3 +2,6 @@ node_modules
 
 # OSX
 .DS_Store
+
+# config file
+./config/config.env
