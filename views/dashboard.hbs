@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-content">
+
+        <h1 class="center">Dashboard</h1>
+        <div class="lead">
+            this page to show all classes, ALL
+        </div>
+        <div class="section">
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Start time</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each group}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{description}}</td>
+                        <td>{{formatDate start_time 'YYYY-MM-DD hh:mm'}}</ td>
+                        <td>{{duration}}</td>
+                        <td>{{location}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
