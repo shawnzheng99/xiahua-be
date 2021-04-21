@@ -4,4 +4,4 @@ node_modules
 .DS_Store
 
 # config file
-./config/config.env
+config/config.env
