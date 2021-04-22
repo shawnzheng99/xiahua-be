@@ -1,13 +1,11 @@
 const express = require('express')
 const getAllClass = require('../controllers/group')
-const Group = require('../models/Group')
-const User = require('../models/User')
+const createGroup = require('../controllers/group')
 const groupRoute = express.Router({ mergeParams: true })
 
 groupRoute.get('/all', async (req, res) => {
     try {
-        const allGroups = await Group.find().lean();
-
+        const allGroups = await getAllClass();
         res.render('dashboard', {
             group: allGroups,
         })
@@ -49,6 +47,7 @@ groupRoute.post('/create', async (req, res) => {
             description,
             level,
         }
+    // mock data
         // const newGroup = {
         //     instructor_id: '110',
         //     start_time: new Date(),
@@ -61,7 +60,7 @@ groupRoute.post('/create', async (req, res) => {
         //     description: 'come and try this new snow class',
         //     level: 0
         // }
-        const createdGroup = await Group.create(newGroup)
+        const createdGroup = await createGroup(newGroup);
         res.send({
             success: true,
             data: createdGroup,
@@ -74,5 +73,6 @@ groupRoute.post('/create', async (req, res) => {
         })
     }
 })
+
 
 module.exports = groupRoute
